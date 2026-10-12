@@ -177,17 +177,17 @@ flowchart LR
 The timer is always in one of four states:
 
 ```mermaid
-stateDiagram-v2
-    [*] --> Work: log in, unlock or wake up
-    Work --> Break: 20 minutes have passed
-    Work --> Held: 20 minutes have passed while a fullscreen app is open
-    Held --> Break: the fullscreen app closes
-    Break --> Work: 20 seconds are up, or Skip / Esc
-    Break --> Work: Snooze (5 minutes)
-    Work --> Paused: Pause
-    Held --> Paused: Pause
-    Break --> Paused: Pause
-    Paused --> Work: Resume
+flowchart TD
+    Start(["Log in, unlock or wake up"]) --> Work
+    Work -- "20 minutes have passed" --> Break
+    Work -- "20 minutes have passed<br/>while a fullscreen app is open" --> Held
+    Held -- "the fullscreen app closes" --> Break
+    Break -- "20 seconds are up,<br/>or Skip / Esc" --> Work
+    Break -- "Snooze (5 minutes)" --> Work
+    Work -- "Pause" --> Paused
+    Held -- "Pause" --> Paused
+    Break -- "Pause" --> Paused
+    Paused -- "Resume" --> Work
 ```
 
 Every time it goes back to **Work** after a break, a skip, a resume or a wake-up, you get a full
