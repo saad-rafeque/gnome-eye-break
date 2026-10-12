@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.eyebreak" path="/org/gnome/shell/extensions/eyebreak/">
+    <key name="work-interval" type="u">
+      <default>1200</default>
+      <range min="5" max="7200"/>
+      <summary>Seconds of screen time between breaks</summary>
+    </key>
+    <key name="break-duration" type="u">
+      <default>20</default>
+      <range min="3" max="600"/>
+      <summary>Length of a break in seconds</summary>
+    </key>
+    <key name="snooze-duration" type="u">
+      <default>300</default>
+      <range min="5" max="3600"/>
+      <summary>Seconds a snoozed break is put off</summary>
+    </key>
+    <key name="break-mode" type="s">
+      <choices>
+        <choice value="banner"/>
+        <choice value="fullscreen"/>
+      </choices>
+      <default>'banner'</default>
+      <summary>How a break is shown</summary>
+    </key>
+    <key name="show-panel-countdown" type="b">
+      <default>false</default>
+      <summary>Show the time left next to the top bar icon</summary>
+    </key>
+    <key name="hold-during-fullscreen" type="b">
+      <default>true</default>
+      <summary>Wait to start a break while a fullscreen app is open</summary>
+    </key>
+    <key name="allow-skip" type="b">
+      <default>true</default>
+      <summary>Offer Skip and Snooze during a break</summary>
+    </key>
+    <key name="play-sounds" type="b">
+      <default>true</default>
+      <summary>Chime when a break starts and ends</summary>
+    </key>
+    <key name="chime" type="s">
+      <choices>
+        <choice value="bell"/>
+        <choice value="wood"/>
+        <choice value="glass"/>
+      </choices>
+      <default>'bell'</default>
+      <summary>Chime sound</summary>
+    </key>
+    <key name="volume" type="d">
+      <default>0.6</default>
+      <range min="0" max="1"/>
+      <summary>Chime volume</summary>
+    </key>
+  </schema>
+</schemalist>

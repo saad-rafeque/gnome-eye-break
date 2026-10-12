@@ -1,0 +1,9 @@
+{
+  "uuid": "eye-break@saad-rafeque.github.io",
+  "name": "Eye Break",
+  "description": "The 20-20-20 rule on autopilot: every 20 minutes, look at something 20 feet (6 m) away for 20 seconds.\n\nRuns quietly in the background and shows a banner or a fullscreen break when it's time, with a gentle chime. Pause it from the top bar. It restarts after you lock the screen, sleep or log out, and waits while a fullscreen app is open.",
+  "shell-version": ["46"],
+  "url": "https://github.com/saad-rafeque/gnome-eye-break",
+  "settings-schema": "org.gnome.shell.extensions.eyebreak",
+  "version-name": "1.0"
+}

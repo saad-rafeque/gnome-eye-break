@@ -1,0 +1,23 @@
+# Quick checks on every push and pull request. The full end-to-end suite needs
+# a desktop session, so run tests/run-e2e.sh locally before sending changes.
+name: Checks
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  checks:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install gjs
+        run: sudo apt-get update && sudo apt-get install -y gjs libglib2.0-bin
+      - name: Timer unit tests
+        run: gjs -m tests/cycle.test.js
+      - name: Settings schema is valid
+        run: glib-compile-schemas --strict --dry-run extension/schemas
+      - name: metadata.json is valid
+        run: python3 -m json.tool extension/metadata.json > /dev/null
+      - name: Scripts parse
+        run: bash -n install.sh tests/run-e2e.sh tools/pack.sh
